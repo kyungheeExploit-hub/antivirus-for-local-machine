@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6o5aozowJ40=",
+  "success": true,
+  "projectFilePath": "/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/EHAntivirusLocal.csproj",
+  "expectedPackageFiles": [
+    "/home/circleu/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

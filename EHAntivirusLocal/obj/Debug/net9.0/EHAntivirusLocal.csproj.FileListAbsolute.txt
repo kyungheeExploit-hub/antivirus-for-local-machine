@@ -1,0 +1,15 @@
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/bin/Debug/net9.0/EHAntivirusLocal
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/bin/Debug/net9.0/EHAntivirusLocal.deps.json
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/bin/Debug/net9.0/EHAntivirusLocal.runtimeconfig.json
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/bin/Debug/net9.0/EHAntivirusLocal.dll
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/bin/Debug/net9.0/EHAntivirusLocal.pdb
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.GeneratedMSBuildEditorConfig.editorconfig
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.AssemblyInfoInputs.cache
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.AssemblyInfo.cs
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.csproj.CoreCompileInputs.cache
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.sourcelink.json
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.dll
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/refint/EHAntivirusLocal.dll
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.pdb
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/EHAntivirusLocal.genruntimeconfig.cache
+/home/circleu/Documents/group-projects/antivirus-for-local-machine/EHAntivirusLocal/obj/Debug/net9.0/ref/EHAntivirusLocal.dll
