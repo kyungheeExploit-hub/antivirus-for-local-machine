@@ -1,66 +1,134 @@
 ﻿using System.IO;
+using System.Diagnostics;
 
 
-namespace FileScanner
+namespace EHAntivirus
 {
+    public class Scanner
+    {
+        public static double CalculateSimilarity(string fpath1, string fpath2)
+        {
+            Process fcmp = new Process();
+            fcmp.StartInfo.FileName = "./fcmpnix";
+            fcmp.StartInfo.Arguments = fpath1 + " " + fpath2;
+            fcmp.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            fcmp.Start();
+            fcmp.WaitForExit();
+            StreamReader fr = new StreamReader("./fcmpresult.txt");
+            string resultString = fr.ReadLine();
+            double result;
 
+            if (resultString != null)
+            {
+                result = Double.Parse(resultString);
+            }
+            else
+            {
+                result = 0;
+            }
+
+            return result;
+        }
+    }
     public class Program
     {
         public static void Main()
         {
-            Console.WriteLine("===========================================================================================================");
-            Console.WriteLine("     ______      __  __       ___       __  __  _______  _____  _    __  _____   _____     __   __  _______");
-            Console.WriteLine("    / ____/     / / / /      /   |     / | / / /__  __/ /_  _/ | |  / / /_  _/  / ___ \\   / /  / / / _____/");
-            Console.WriteLine("   / /___      / /_/ /      / /| |    /  |/ /    / /     / /   | | / /   / /   / /__/ /  / /  / / / /____  ");
-            Console.WriteLine("  / ____/     / __  /      / __  |   / | | /    / /     / /    | |/ /   / /   / /-  --  / /  / / /____  /  ");
-            Console.WriteLine(" / /___  __  / / / / __   / /  | |  / /|  /    / /    _/ /_    | | /  _/ /_  / /  \\ \\  / /__/ / _____/ /   ");
-            Console.WriteLine("/_____/ /_/ /_/ /_/ /_/  /_/   |_| /_/ |_/    /_/    /____/    |__/  /____/ /_/    \\_\\ \\_____/ /______/    ");
+            Console.WriteLine("=============================================================================================================");
+            Console.WriteLine("     ______      __  __         ___       __  __  _______  _____  _    __  _____   _____     __   __  _______");
+            Console.WriteLine("    / ____/     / / / /        /   |     / | / / /__  __/ /_  _/ | |  / / /_  _/  / ___ \\   / /  / / / _____/");
+            Console.WriteLine("   / /___      / /_/ /        / /| |    /  |/ /    / /     / /   | | / /   / /   / /__/ /  / /  / / / /____  ");
+            Console.WriteLine("  / ____/     / __  /        / __  |   / | | /    / /     / /    | |/ /   / /   / /-  --  / /  / / /____  /  ");
+            Console.WriteLine(" / /___  __  / / / / __     / /  | |  / /|  /    / /    _/ /_    | | /  _/ /_  / /  \\ \\  / /__/ / _____/ /   ");
+            Console.WriteLine("/_____/ /_/ /_/ /_/ /_/    /_/   |_| /_/ |_/    /_/    /____/    |__/  /____/ /_/    \\_\\ \\_____/ /______/    ");
             Console.WriteLine("");
             Console.WriteLine("Made by \"The Exploit Hub\"");
-            Console.WriteLine("===========================================================================================================");
+            Console.WriteLine("=============================================================================================================");
             Console.WriteLine("");
 
             bool isexit = false;
 
             while (!isexit)
             {
-                Console.Write("Enter a directory path you want to scan: ");
-                string directoryPath = Console.ReadLine();
+                Console.Write("Type command(type 'h' to show help): ");
+                string command = Console.ReadLine();
                 Console.WriteLine("");
 
-                if (directoryPath == "" || directoryPath == null)
+                if (command == null)
                 {
-                    Console.WriteLine("Please enter the directory path.");
+                    Console.WriteLine("Invalid input.");
+                    Console.WriteLine("");
+                    continue;
                 }
-                else
+                switch (command.ToLower())
                 {
-                    try
-                    {
-                        string[] filePaths = Directory.GetFiles(directoryPath);
-                        string[] directoryPaths = Directory.GetDirectories(directoryPath);
+                    case "h":
+                        {
+                            Console.WriteLine("h: show help");
+                            Console.WriteLine("s: scan a directory");
+                            Console.WriteLine("c: clear screen");
+                            Console.WriteLine("x: exit");
+                            Console.WriteLine("");
+                            break;
+                        }
+                    case "s":
+                        {
+                            Console.Write("Enter a directory path you want to scan: ");
+                            string directoryPath = Console.ReadLine();
+                            Console.WriteLine("");
 
-                        for (int i = 0; i < filePaths.Length; i++)
-                        {
-                            Console.WriteLine(filePaths[i]);
+                            if (directoryPath == "" || directoryPath == null)
+                            {
+                                Console.WriteLine("Please enter the directory path.");
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    string[] filePaths = Directory.GetFiles(directoryPath);
+                                    string[] directoryPaths = Directory.GetDirectories(directoryPath);
+
+                                    for (int i = 0; i < filePaths.Length; i++)
+                                    {
+                                        Console.WriteLine(filePaths[i]);
+                                    }
+                                    for (int i = 0; i < directoryPaths.Length; i++)
+                                    {
+                                        Console.WriteLine(directoryPaths[i]);
+                                    }
+                                }
+                                catch (DirectoryNotFoundException)
+                                {
+                                    Console.WriteLine("There is no directory \'" + directoryPath + "\'.");
+                                    directoryPath = "";
+                                }
+                                catch (UnauthorizedAccessException)
+                                {
+                                    Console.WriteLine("Unauthorized access occurred at \'" + directoryPath + "\'.");
+                                    directoryPath = "";
+                                }
+                            }
+                            Console.WriteLine("");
+                            break;
                         }
-                        for (int i = 0; i < directoryPaths.Length; i++)
+                    case "c":
                         {
-                            Console.WriteLine(directoryPaths[i]);
+                            Console.Clear();
+                            break;
                         }
-                    }
-                    catch (DirectoryNotFoundException)
-                    {
-                        Console.WriteLine("There is no directory \'" + directoryPath + "\'.");
-                        directoryPath = "";
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                        Console.WriteLine("Unauthorized access occurred at \'" + directoryPath + "\'.");
-                        directoryPath = "";
-                    }   
+                    case "x":
+                        {
+                            isexit = true;
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Please type a proper command.");
+                            Console.WriteLine("");
+                            break;
+                        }
                 }
             }
-            
         }
     }
 }

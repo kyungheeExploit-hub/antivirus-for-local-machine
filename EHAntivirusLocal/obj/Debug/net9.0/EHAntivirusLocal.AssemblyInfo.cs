@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EHAntivirusLocal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53d120144537666db91c5338f76587ae59075d6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0ed919085d9ce97d1ee33fababf0c8461ba5f7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EHAntivirusLocal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EHAntivirusLocal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
